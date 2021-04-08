@@ -1,39 +1,73 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useEffect, useState, useCallback } from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import styled from "styled-components";
+// import ReactGA from 'react-ga';
+import Slideshow from "../components/slideshow";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Button from "../components/button"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-class IndexPage extends React.Component {
-  render() {
-    const siteTitle = "Gatsby Starter Personal Website"
+const images = [
+  "images/all_products.jpeg",
+  "images/all_lotion.jpeg",
+  "images/all_products2.jpeg",
+  "images/all_soap1.jpeg",
+  "images/aruba_lotion.jpeg",
+  "images/all_products4.jpeg"
+];
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="Home"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <img style={{ margin: 0 }} src="./GatsbyScene.svg" alt="Gatsby Scene" />
-        <h1>
-          Hey people{" "}
-          <span role="img" aria-label="wave emoji">
-            👋
-          </span>
-        </h1>
-        <p>Welcome to your new Gatsby website. You are on your home page.</p>
-        <p>
-          This starter comes out of the box with styled components and Gatsby's
-          default starter blog running on Netlify CMS.
-        </p>
-        <p>Now go build something great!</p>
-        <Link to="/blog/">
-          <Button marginTop="35px">Go to Blog</Button>
-        </Link>
-      </Layout>
-    )
+const settings = {
+  dots: false,
+  infinite: true,
+  autoplay: true,
+  lazyLoad: true,
+  autoplaySpeed: 5000,
+  speed: 3000,
+  fade: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  className: 'slick-slider-fade',
+};
+
+const MainContainer = styled.div`
+  
+  .main-text {
+    text-align: justify;
+    background-color: white;
+    line-height: 26px;
+    font-weight: 400;
+    padding: 15px;
   }
-}
 
-export default IndexPage
+`;
+
+export default function IndexPage(props) {
+
+  const siteTitle = "Little Red Soap Company";
+
+  useEffect(() => {
+    // if (typeof "window" !== "undefined") {
+    //   ReactGA.pageview(window.location.pathname + window.location.search);
+    // }
+  }, [])
+
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <SEO
+        title="Home"
+        keywords={[`cbd lotion`, `cbd soap`, `custom soap`, `goats milk cbd soap`]}
+      />
+
+      <MainContainer>
+        <div className="row mb-5">
+          <div className="col-6 px-5">
+            <Slideshow images={images} settings={settings} key="image-slider" />
+            
+          </div>
+        </div>
+        
+      </MainContainer>
+    </Layout>
+  )
+}

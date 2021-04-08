@@ -34,38 +34,20 @@ function Header({ location }) {
 export default function Layout(props) {
 
   const { location, title, children } = props;
-  const [headerClass, setHeaderClass] = useState("header-transparent");
-
-  useEffect(() => {
-    if (window) {
-      window.addEventListener("scroll", handleScroll);
-
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
-  }, [])
-
-  const handleScroll = () => {
-    if (window.scrollY > 250) {
-      setHeaderClass("header-white");
-    } else if (window.scrollY <= 250) {
-      setHeaderClass("header-transparent");
-    }
-  }
-
+  
   return (
     <Container>
       <Wrapper >
         <LayoutContainer >
-          <div className="mx-auto" >
             <HeaderContainer >
               <div className={classNames("header-white row mb-0 justify-content-middle")}>
                 <Header location={location} />
               </div>
             </HeaderContainer>
-            <MainContainer className="position-relative row">
+            <MainContainer className="row">
               <main className="col-12">{children}</main>
             </MainContainer>
-          </div>
+          
         </LayoutContainer>
         <Footer>
         </Footer>
@@ -139,7 +121,6 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `
 const MainContainer = styled.div`
-    top:200px;
 `;
 
 const Footer = styled.footer`
