@@ -9,24 +9,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const images = [
-  "images/all_products.jpeg",
-  "images/all_lotion.jpeg",
-  "images/all_products2.jpeg",
-  "images/all_soap1.jpeg",
-  "images/aruba_lotion.jpeg",
-  "images/all_products4.jpeg"
+  "images/all_products_400.jpeg",
+  "images/all_product4_400.jpeg",
+  "images/all_products5_400.jpeg",
+  "images/all_soaps2_400.jpeg",
+  "images/all_products2_400.jpeg",
+  "images/all_products3_400.jpeg"
 ];
 
 const settings = {
-  dots: false,
+  dots: true,
   infinite: true,
   autoplay: true,
   lazyLoad: true,
   autoplaySpeed: 5000,
-  speed: 3000,
-  fade: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
+  speed: 500,
+  fade: false,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  pauseOnHover: false,
   className: 'slick-slider-fade',
 };
 

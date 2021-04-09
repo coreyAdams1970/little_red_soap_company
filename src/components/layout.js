@@ -70,7 +70,6 @@ const LayoutContainer = styled.div`
 const HeaderContainer = styled.div`
   .header-transparent{
     background-color:rgba(0, 0, 0, 0.2);
-
     a {
       color: white;
     }
@@ -103,8 +102,7 @@ const HeaderContainer = styled.div`
 
   .logo {
     img {
-      max-width: 125px;
-      max-height: 300px;
+      max-height: 160px;
     }
   }
 
@@ -113,7 +111,6 @@ const HeaderContainer = styled.div`
     font-size: 15px;
     letter-spacing: 0px;
     font-style: normal;
-
   }
 `;
 
@@ -121,6 +118,9 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `
 const MainContainer = styled.div`
+  margin: auto;
+  position:relative;  
+  top:300px;
 `;
 
 const Footer = styled.footer`

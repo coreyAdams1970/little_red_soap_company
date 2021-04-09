@@ -12,13 +12,23 @@ const SlideContainer = styled.div`
 .slide-container {
     max-height: 400px;
     max-width: 600px;
-  
+    overflow-y:hidden;
+
+    slick-slide {
+        img {
+            display: block;
+            max-width:600px;
+            max-height:400px;
+        }
+        
+    }
+
     .slide-img {
       max-height: 400px;
       max-width:400px;
 
       img {
-        max-width:400px;
+       
       }
     }
 }
