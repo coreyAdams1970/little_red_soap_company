@@ -1,7 +1,7 @@
 backend:
   name: github
-  repo: thomaswang/gatsby-personal-starter-blog
-
+  repo: csmaller/little-red-soap-company
+  branch: main
 media_folder: content/assets
 public_folder: ../assets
 
