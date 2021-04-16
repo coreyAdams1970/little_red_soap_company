@@ -4,7 +4,6 @@ import SEO from "../components/seo";
 import styled from "styled-components";
 // import ReactGA from 'react-ga';
 import Slideshow from "../components/slideshow";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
