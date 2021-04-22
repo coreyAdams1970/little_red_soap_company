@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import styled from "styled-components";
@@ -22,22 +22,49 @@ const settings = {
   autoplay: true,
   lazyLoad: true,
   autoplaySpeed: 5000,
-  speed: 500,
-  fade: false,
-  slidesToShow: 3,
-  slidesToScroll: 3,
+  speed: 3000,
+  fade: true,
+  slidesToShow: 2,
+  slidesToScroll: 1,
   pauseOnHover: false,
   className: 'slick-slider-fade',
 };
 
 const MainContainer = styled.div`
-  
   .main-text {
     text-align: justify;
     background-color: white;
     line-height: 26px;
-    font-weight: 400;
-    padding: 15px;
+    padding-top:10px;
+
+    h3 {
+      margin-top: 20px;
+      border-bottom: 1px solid #face11;
+    }
+  } 
+
+  .you-tube-wrapper {
+     padding-left: 20px;
+     padding-right: 20px; 
+  }
+
+  @media(max-width:700px){
+    .you-tube-wrapper {
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+
+  @media(max-width:500px){
+    .main-text{
+      padding: 10px;
+    }
+  }
+
+  .slider-main-container {
+    position: relative;
+    top: 0;
   }
 
 `;
@@ -61,12 +88,28 @@ export default function IndexPage(props) {
 
       <MainContainer>
         <div className="row mb-5">
-          <div className="col-6 px-5">
+        <div className="col-12 col-lg-6 px-5">
+            <div className="col-12">
+              <h3 className="text-center pb-1">Welcome to Little Red Soap Company</h3>
+            </div>
+            <div className="row main-text">
+              {/* <div className="col-12">
+                <p>Kick It Up A Notch! Alpine Designs and Desert Designs were grown out of the desire to create outdoor living spaces that not only meet the needs and dreams of our clients but to exceed them while incorporating the surrounding beauty of Mother Nature.
+              </p>
+                <p>We will incorporate  your families personality and style into the design.  Your property should be a reflection of you providing family memories for years to come.
+              <br />Our experienced team prides ourselves on customer service, design innovation and old school business practices.
+              </p>
+                <p>Kick it Up A Notch! Desert Designs has 14 years of experience with custom home builders and high-end residential remodels in Scottsdale Arizona.
+              </p><p>
+                  We look forward to bringing our innovation and creativity to the Wasatch and Salt Lake Valley.
+              </p>
+              </div> */}
+            </div>
+          </div>
+          <div className="col-12 col-lg-6 px-5">
             <Slideshow images={images} settings={settings} key="image-slider" />
-            
           </div>
         </div>
-        
       </MainContainer>
     </Layout>
   )

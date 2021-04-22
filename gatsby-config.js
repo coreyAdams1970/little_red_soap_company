@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
     // edit below
-    title: `Kick It Up A Notch Alpine and Desert Design`,
+    title: `Little Red Soap Company`,
     author: `Corey Smaller`,
-    description: `landscape design in AZ and UT`,
-    siteUrl: `https://www.kickitupdesertdesign.com`,
+    description: `custom made soaps with love`,
+    siteUrl: `https://www.littleredsoapcompany.com`,
     social: {
       twitter: `gatsbyjs`,
-      instagram: `kickitupanotch`
+      instagram: `littleredsoapcompany`
     },
   },
   plugins: [

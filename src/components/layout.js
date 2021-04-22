@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import "./style.scss";
 import Logo from "../../static/images/little_red.jpeg";
 import classNames from "classnames";
@@ -8,15 +8,22 @@ import classNames from "classnames";
 const rootPath = `${__PATH_PREFIX__}/`
 const blogPath = `${__PATH_PREFIX__}/blog/`
 
+// Define our `fg` and `bg` on the theme
+const theme = {
+  fg: "palevioletred",
+  bg: "white",
+  primary: "#dc1f24"
+};
+
 function Header({ location }) {
   return (
     <>
-      <div className="col-lg-1 col-4">
+      <div className="col-lg-2 col-4 pl-4">
         <Link className="d-flex logo" to={location.pathname === blogPath ? `/` : `/`} >
           <img src={Logo} className="float-left" />
         </Link>
       </div>
-      <nav className="col-lg-11 col-8 mb-4 mt-0 text-right mt-5 pr-5">
+      <nav className="col-lg-10 col-8 mb-4 mt-0 text-right mt-5 pr-5">
         <a href="/" className="nav-button" disabled={location.pathname === rootPath}>
           Home
         </a>
@@ -34,11 +41,12 @@ function Header({ location }) {
 export default function Layout(props) {
 
   const { location, title, children } = props;
-  
+
   return (
-    <Container>
-      <Wrapper >
-        <LayoutContainer >
+    <ThemeProvider theme={theme}>
+      <Container>
+        <Wrapper >
+          <LayoutContainer >
             <HeaderContainer >
               <div className={classNames("header-white row mb-0 justify-content-middle")}>
                 <Header location={location} />
@@ -47,12 +55,13 @@ export default function Layout(props) {
             <MainContainer className="row">
               <main className="col-12">{children}</main>
             </MainContainer>
-          
-        </LayoutContainer>
-        <Footer>
-        </Footer>
-      </Wrapper>
-    </Container>
+
+          </LayoutContainer>
+          <Footer>
+          </Footer>
+        </Wrapper>
+      </Container>
+    </ThemeProvider>
   )
 }
 
@@ -68,17 +77,11 @@ const LayoutContainer = styled.div`
 `;
 
 const HeaderContainer = styled.div`
-  .header-transparent{
-    background-color:rgba(0, 0, 0, 0.2);
-    a {
-      color: white;
-    }
-  }
-
   .header-white {
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:white;
+    border-bottom: 1px solid ${props => props.theme.primary};
     a {
-      color: #face11;
+      color: ${props => props.theme.primary};
     }
   }
  
@@ -86,8 +89,8 @@ const HeaderContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width:100%;
-  z-index:10000;
+  width: 100%;
+  z-index: 10000;
 
   a {
     text-decoration: none !important;
@@ -96,7 +99,7 @@ const HeaderContainer = styled.div`
     padding-bottom:0px;
   }
 
-  a:hover{
+  a:hover {
     text-decoration: underline !important;
   }
 
