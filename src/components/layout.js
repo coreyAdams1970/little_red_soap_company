@@ -8,10 +8,9 @@ import classNames from "classnames";
 const rootPath = `${__PATH_PREFIX__}/`
 const blogPath = `${__PATH_PREFIX__}/blog/`
 
-// Define our `fg` and `bg` on the theme
 const theme = {
-  fg: "palevioletred",
-  bg: "white",
+  linkRollover: "palevioletred",
+  link: "white",
   primary: "#dc1f24"
 };
 
@@ -19,7 +18,7 @@ function Header({ location }) {
   return (
     <>
       <div className="col-lg-2 col-4 pl-4">
-        <Link className="d-flex logo" to={location.pathname === blogPath ? `/` : `/`} >
+        <Link className="d-flex logo" to={`/`} >
           <img src={Logo} className="float-left" />
         </Link>
       </div>
