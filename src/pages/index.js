@@ -17,7 +17,7 @@ const images = [
 ];
 
 const settings = {
-  dots: true,
+  dots: false,
   infinite: true,
   autoplay: true,
   lazyLoad: true,
@@ -39,7 +39,6 @@ const MainContainer = styled.div`
 
     h3 {
       margin-top: 20px;
-      border-bottom: 1px solid #face11;
     }
   } 
 

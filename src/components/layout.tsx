@@ -6,7 +6,6 @@ import Logo from "../../static/images/little_red.jpeg";
 import classNames from "classnames";
 
 const rootPath = `${__PATH_PREFIX__}/`
-const blogPath = `${__PATH_PREFIX__}/blog/`
 
 const theme = {
   linkRollover: "palevioletred",
@@ -29,9 +28,9 @@ function Header({ location }) {
         <Link to="/contact/" className="nav-button" disabled={location.pathname === "/contact/"}>
           Contact
         </Link>
-        <Link to="/blog/" className="nav-button" disabled={location.pathname === "/blog/"}>
+        {/* <Link to="/blog/" className="nav-button" disabled={location.pathname === "/blog/"}>
           Our Work
-        </Link>
+        </Link> */}
       </nav>
     </>
   );
@@ -54,7 +53,6 @@ export default function Layout(props) {
             <MainContainer className="row">
               <main className="col-12">{children}</main>
             </MainContainer>
-
           </LayoutContainer>
           <Footer>
           </Footer>
@@ -67,7 +65,7 @@ export default function Layout(props) {
 const Container = styled.div`
     margin-left: 15px;
     margin-right: 15px;
-  `;
+`;
 
 const LayoutContainer = styled.div`
   margin-left: auto;
@@ -77,17 +75,13 @@ const LayoutContainer = styled.div`
 
 const HeaderContainer = styled.div`
   .header-white {
-    background-color:white;
+    background-color: white;
     border-bottom: 1px solid ${props => props.theme.primary};
     a {
       color: ${props => props.theme.primary};
     }
   }
  
-  border-bottom: 1px solid rgba(255, 255, 255, .2);
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 10000;
 
@@ -121,8 +115,7 @@ const Wrapper = styled.div`
 `
 const MainContainer = styled.div`
   margin: auto;
-  position:relative;  
-  top:300px;
+  margin-top: 40px;
 `;
 
 const Footer = styled.footer`
