@@ -23,14 +23,13 @@ const SlideContainer = styled.div`
     .slide-img {
       max-height: 600px;
       max-width: 600px;
-
     }
 }
 `;
 
 const CustomSlide = ({ index, image }) => {
     return (
-        <div key={index}>
+        <div>
             <img src={image} />
         </div>
     );
@@ -42,7 +41,7 @@ export default function Slideshow(props) {
     return (
         <SlideContainer className={classNames("slide-container", wrapperClass)}>
             <Slider {...settings}>
-                {images.map((image, index) => <CustomSlide image={image} index={index} />)}
+                {images.map((image, index) => <CustomSlide key={index} image={image} index={index} />)}
             </Slider>
         </SlideContainer>
     )
