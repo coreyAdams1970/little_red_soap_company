@@ -2,11 +2,15 @@ import React, { useEffect } from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import styled from "styled-components";
-// import ReactGA from 'react-ga';
+import ReactGA from 'react-ga';
 import Slideshow from "../components/slideshow";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+ReactGA.initialize(process.env.GOOGLE_ID);
+
+//TODO: move this to a JSON file
 const images = [
   "images/all_products_400.jpeg",
   "images/all_product4_400.jpeg",
@@ -73,9 +77,9 @@ export default function IndexPage(props) {
   const siteTitle = "Little Red Soap Company";
 
   useEffect(() => {
-    // if (typeof "window" !== "undefined") {
-    //   ReactGA.pageview(window.location.pathname + window.location.search);
-    // }
+    if (typeof "window" !== "undefined") {
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
   }, [])
 
   return (

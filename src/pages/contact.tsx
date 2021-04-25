@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import ReactGA from 'react-ga';
 import { Form, Button } from "react-bootstrap";
-//ReactGA.initialize('G-GQ7PW6FH0Z');
+ReactGA.initialize(process.env.GOOGLE_ID);
 
 const formName ="littleRedContactUs";
 
@@ -13,7 +13,7 @@ export default function Contact(props) {
 
     useEffect(() => {
         if (typeof "window" !== "undefined") {
-           // ReactGA.pageview(window.location.pathname + window.location.search);
+           ReactGA.pageview(window.location.pathname + window.location.search);
         }
     }, [])
 
