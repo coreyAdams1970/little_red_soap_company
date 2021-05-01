@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 import ReactGA from 'react-ga';
 import { Form, Button } from "react-bootstrap";
 ReactGA.initialize(process.env.GOOGLE_ID);
-
+console.log(process.env.GOOGLE_ID)
 const formName ="littleRedContactUs";
 
 export default function Contact(props) {
