@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 import { Form, Button } from "react-bootstrap";
 ReactGA.initialize(process.env.GOOGLE_ID);
 
-const formName ="littleRedContactUs";
+const formName = "littleRedContactUs";
 
 export default function Contact(props) {
     const siteTitle = "Little Red Soap Company";
@@ -13,7 +13,13 @@ export default function Contact(props) {
 
     useEffect(() => {
         if (typeof "window" !== "undefined") {
-           ReactGA.pageview(window.location.pathname + window.location.search);
+            ReactGA.pageview(window.location.pathname + window.location.search);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', process.env.GOOGLE_ID);
         }
     }, [])
 

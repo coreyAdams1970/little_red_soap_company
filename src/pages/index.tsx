@@ -79,6 +79,13 @@ export default function IndexPage(props) {
   useEffect(() => {
     if (typeof "window" !== "undefined") {
       ReactGA.pageview(window.location.pathname + window.location.search);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', process.env.GOOGLE_ID);
+
     }
   }, [])
 
@@ -91,7 +98,7 @@ export default function IndexPage(props) {
 
       <MainContainer>
         <div className="row mb-5">
-        <div className="col-12 col-lg-6 px-5">
+          <div className="col-12 col-lg-6 px-5">
             <div className="col-12">
               <h3 className="text-center pb-1">Welcome to Little Red Soap Company</h3>
             </div>

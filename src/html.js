@@ -11,6 +11,8 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCPTPWK4CX"></script>
+
         <link
           type="application/opensearchdescription+xml"
           rel="search"
