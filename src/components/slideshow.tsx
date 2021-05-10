@@ -7,23 +7,18 @@ import classNames from "classnames";
 
 const SlideContainer = styled.div`
   
+.slick-slide {
+    img {
+        display: block;
+        max-width:600px;
+        border:1px solid black;
+    }
+}
+
 .slide-container {
     max-height: 600px;
     max-width: 600px;
     overflow-y:hidden;
-
-    slick-slide {
-        img {
-            display: block;
-            max-width:600px;
-            max-height:600px;
-        }
-    }
-
-    .slide-img {
-      max-height: 600px;
-      max-width: 600px;
-    }
 }
 `;
 
