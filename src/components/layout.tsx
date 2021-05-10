@@ -28,9 +28,6 @@ function Header({ location }) {
         <Link to="/contact/" className="nav-button" disabled={location.pathname === "/contact/"}>
           Contact
         </Link>
-        {/* <Link to="/blog/" className="nav-button" disabled={location.pathname === "/blog/"}>
-          Our Work
-        </Link> */}
       </nav>
     </>
   );
