@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import ReactGA from 'react-ga';
 import { Form, Button } from "react-bootstrap";
+import Honeypot from "../components/honeypot";
 ReactGA.initialize(process.env.GOOGLE_ID);
 
 const formName = "littleRedContactUs";
@@ -54,6 +55,7 @@ export default function Contact(props) {
                     <h3>Contact Us</h3>
                 </div>
             </div>
+            <Honeypot />
             <div className="row">
                 <div className="col-12 col-lg-8">
                     <Form name={formName} onSubmit={handleSubmit} data-netlify="true" >

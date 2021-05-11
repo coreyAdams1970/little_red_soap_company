@@ -102,7 +102,16 @@ export default function IndexPage(props) {
               <h3 className="text-center pb-1">Welcome to Little Red Soap Company</h3>
             </div>
             <div className="row main-text">
-             
+              The Little Red Soap Company is an all natural company dedicated to healthy living. We handcraft each product based on their extraordinary healing benefits. We use the highest quality ingredients no parabens, phthalates, sulfates, dyes and organic when possible. We also believe in using containers that are BPA free and reusable for the environment.<br/><br/>
+
+              Your skin is the largest organ on your body what you put on it is just as important as what you put in it. Vitamins and minerals get absorbed through the skin as well as harmful chemicals that are found in most skincare products. Goats Milk is known for its soothing and calming properties and very high in Vitamin A. It provides the deepest hydration to even the toughest and driest skin. It calms the skin while leaving a supple and soft finish.<br/><br/>
+
+              Bathe your skin in the delectably silky, nourishing Goats Milk for all day softness and hydration. It leaves a beautiful sheen and soft skin no oily residue. Perfect for sensitive and delicate skin and is baby safe.<br/><br/>
+
+              The Little Red Soap Company was started 8 years ago by a female Army veteran to help find skincare solutions for those who value high quality products with simple ingredients.<br/><br/>
+
+              If you have any specific ingredients needs do to allergies or personal preference, be sure to contact us about our custom small batch soaps and lotions made just for you!
+
             </div>
           </div>
           <div className="col-12 col-lg-6 px-5">
